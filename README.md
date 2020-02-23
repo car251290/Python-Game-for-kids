@@ -34,17 +34,17 @@ y_change = 0
 
 
 class Segment(pygame.sprite.Sprite):
-    # -- Methods
-    # Constructor function
+   # this is the Methods
+   # Constructor function
     def __init__(self, x, y):
-        # Call the parent's constructor
+   # Call the parent's constructor
         super().__init__()
-
-        #set height, width
+        
+   # Set of the height and the width
         self.image = pygame.Surface([segment_width, segment_height])
         self.image.fill(WHITE)
 
-        #Make our top-left corner the passed-in location.
+   # Making the our of the top-left the passed.
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
@@ -77,10 +77,8 @@ while not done:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             done = True
-
-        #Set the speed based 
-        #We want the speed to be enough that we move a full
-        #segment, plus the margin.
+   # Set the speedWe want the speed to be enough that we move a full
+   # Segment, plus the margin.
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 x_change = (segment_width + segment_margin) * -1
@@ -95,30 +93,30 @@ while not done:
                 x_change = 0
                 y_change = (segment_height + segment_margin)
 
-    #Get rid of last segment of the snake
-    #pop() command removes last item in list
+  # Get rid of last segment of the snake
+  # pop() command removes last item in list
     old_segment = snake_segments.pop()
     allspriteslist.remove(old_segment)
 
-    #The segment and possition of the snake
+  # The segment and possition of the snake
     x = snake_segments[0].rect.x + x_change
     y = snake_segments[0].rect.y + y_change
     segment = Segment(x, y)
 
-    #Insert new segment into the list
+  # Insert new segment into the list
     snake_segments.insert(0, segment)
     allspriteslist.add(segment)
 
-    #Draw everything
-    #Clear screen
+ # Draw everything
+ # Clear screen
     screen.fill(BLACK)
 
     allspriteslist.draw(screen)
 
-    #Flip screen
+  # Flip screen
     pygame.display.flip()
 
-    #Pause
+  # Pause
     clock.tick(5)
 # for Pyhton understand when to quit
 pygame.quit()
