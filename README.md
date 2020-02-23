@@ -9,10 +9,10 @@ I will use this page as a resorces to the game: https://www.pygame.org/news
 but to download and start I will show them the fisrt to the end how to make it.
 
 this the code I will use for make the kids will change some of the design as color and the size of the window as they choose.
-#my Goal 
+# my Goal 
 They Have to understand the if statemnet and how to make a declaration function, and change the color of the window with code
 
-#Exmample of the code that I will use
+
 # import the pygame
  import pygame
 # Call this function so the Pygame library can initialize itself
@@ -34,7 +34,7 @@ y_change = 0
 
 
 class Segment(pygame.sprite.Sprite):
-   # this is the Methods
+   # these are the Methods
    # Constructor function
     def __init__(self, x, y):
    # Call the parent's constructor
